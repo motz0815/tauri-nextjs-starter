@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tauri + Next.js Starter
 
-## Getting Started
+A modern starter template using Tauri v2 and Next.js v15, configured for static exports and optimal desktop application development. Features include:
 
-First, run the development server:
+- 🦀 Tauri v2 for native desktop capabilities
+- ⚡ Next.js 15 with static export configuration
+- 🎨 TailwindCSS for styling
+- 📝 TypeScript support
+- 🔧 ESLint + Prettier for code quality
+- 🥯 Bun as the package manager
 
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Bun](https://bun.sh/) (v1.1.38 or later)
+- [Rust](https://www.rust-lang.org/) (v1.77.2 or later)
+- [Tauri Prerequisites](https://tauri.app/v2/guides/getting-started/prerequisites)
+
+## Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/tauri-nextjs-starter
+cd tauri-nextjs-starter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+bun install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To start the development server, run:
+```bash
+bun tauri dev
+```
 
-## Learn More
+This will:
+- Start the Next.js development server
+- Launch the Tauri development window
+- Enable hot-reload for both frontend and Rust code changes
 
-To learn more about Next.js, take a look at the following resources:
+## Building
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a production build:
+```bash
+bun tauri build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+NOTE: The build command will fail if you do not modify the `src-tauri/tauri.conf.json` to use your own identifier.
 
-## Deploy on Vercel
+This command will:
+1. Build the Next.js application as a static export
+2. Compile the Rust code
+3. Package everything into a native desktop application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The built applications will be available in `src-tauri/target/release`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+```
+.
+├── app/ # Next.js application files
+├── public/ # Static assets
+├── src-tauri/ # Rust source code for Tauri
+│ ├── src/ # Rust application code
+│ ├── Cargo.toml # Rust dependencies
+│ └── tauri.conf.json # Tauri configuration
+└── package.json # Node.js dependencies
+```
+
+## Configuration
+
+### Next.js
+
+The application is configured for static exports, which is required for Tauri integration. Key configurations can be found in `next.config.ts`.
+
+### Tauri
+
+Tauri configuration is managed in `src-tauri/tauri.conf.json`, which handles window settings, build commands, and application metadata.
+
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
