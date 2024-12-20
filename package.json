@@ -6,7 +6,8 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "format": "prettier --write . --ignore-path ./.gitignore --ignore-path ./.prettierignore --ignore-path ./src-tauri/.gitignore"
     },
     "packageManager": "bun@1.1.38",
     "dependencies": {
