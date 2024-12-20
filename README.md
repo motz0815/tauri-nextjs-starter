@@ -48,14 +48,14 @@ To create a production build:
 bun tauri build
 ```
 
-NOTE: The build command will fail if you do not modify the `src-tauri/tauri.conf.json` to use your own identifier.
+NOTE: The build command will fail if you do not modify the [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json) to use your own identifier.
 
 This command will:
 1. Build the Next.js application as a static export
 2. Compile the Rust code
 3. Package everything into a native desktop application
 
-The built applications will be available in `src-tauri/target/release`.
+The built applications will be available in [`src-tauri/target/release`](src-tauri/target/release).
 
 ## Project Structure
 ```
@@ -73,11 +73,11 @@ The built applications will be available in `src-tauri/target/release`.
 
 ### Next.js
 
-The application is configured for static exports, which is required for Tauri integration. Key configurations can be found in `next.config.ts`.
+The application is configured for static exports, which is required for Tauri integration. Key configurations can be found in [`next.config.ts`](next.config.ts).
 
 ### Tauri
 
-Tauri configuration is managed in `src-tauri/tauri.conf.json`, which handles window settings, build commands, and application metadata.
+Tauri configuration is managed in [`src-tauri/tauri.conf.json`](src-tauri/tauri.conf.json), which handles window settings, build commands, and application metadata.
 
 
 ## Contributing
