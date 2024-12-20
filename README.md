@@ -1,6 +1,6 @@
 # Tauri + Next.js Starter
 
-A modern starter template using Tauri v2 and Next.js v15, configured for static exports and optimal desktop application development. Features include:
+A modern starter template using Tauri v2 and Next.js v15, configured for static exports and optimal desktop and mobile application development. Features include:
 
 - 🦀 Tauri v2 for native desktop capabilities
 - ⚡ Next.js 15 with static export configuration
